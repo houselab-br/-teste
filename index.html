@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berg Lima Soluções - Portfólio Empresarial</title>
+    <!-- FontAwesome para ícones profissionais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- Configurações Globais --- */
+        :root {
+            --primary: #0F4C81; /* Azul Escuro (Confiança) */
+            --secondary: #1EAEF1; /* Azul Ciano (Climatização/Frescor) */
+            --dark: #2D3748;
+            --light: #F7FAFC;
+            --gray: #718096;
+            --white: #FFFFFF;
+            --accent: #FFB800; /* Dourado para Destaques e Estrelas */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* --- Cabeçalho & Menu --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+   /* --- Seção Hero (Abertura com a imagem de fundo integrada) --- */
+.hero {
+    position: relative;
+    color: var(--white);
+    padding: 8rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    
+    /* 👇 Link direto da sua imagem aplicado com tratamento visual profissional 👇 */
+    background-image: linear-gradient(135deg, rgba(15, 76, 129, 0.9) 0%, rgba(7, 34, 58, 0.93) 100%), url('https://lh3.googleusercontent.com/d/1dCYE1A3hLtrZoe-5xCd7Dbvqv9tI1baG');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--light);
+            clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge-nota {
+            background: rgba(255, 255, 255, 0.12);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .badge-nota i {
+            color: var(--accent);
+        }
+
+        /* --- BOTÕES EXTRA VISUAIS E MODERNOS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #0d96d4 100%);
+            color: var(--white);
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(30, 174, 241, 0.35);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30, 174, 241, 0.5);
+            background: linear-gradient(135deg, #24b6f7 0%, var(--secondary) 100%);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(30, 174, 241, 0.4);
+        }
+
+        /* Botão Secundário do Filtro */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid #E2E8F0;
+            color: var(--dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(30, 174, 241, 0.15);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a5e99 100%);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(15, 76, 129, 0.3);
+        }
+
+        /* Botão de Contato Grande no Rodapé */
+        .btn-footer {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3) !important;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-footer:hover {
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45) !important;
+            background: linear-gradient(135deg, #34e075 0%, #159c8c 100%) !important;
+        }
+
+        /* --- Seções Gerais --- */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 12px auto 0;
+            border-radius: 10px;
+        }
+
+        /* --- Sobre Nós & MVV --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.2rem;
+        }
+
+        .mvv-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .mvv-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mvv-card i {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .mvv-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        /* --- Serviços --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: var(--secondary);
+        }
+
+        .service-icon-box {
+            background: linear-gradient(135deg, #EBF8FF 0%, #D2EFFF 100%);
+            padding: 3rem;
+            text-align: center;
+            color: var(--primary);
+            font-size: 3.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+
+        .service-info {
+            padding: 2rem;
+        }
+
+        .service-info h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.35rem;
+        }
+
+        /* --- Diferenciais --- */
+        .features {
+            background-color: #EDF2F7;
+            max-width: 100%;
+        }
+
+        .features-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .feature-item i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        /* --- Depoimentos --- */
+        .testimonials {
+            background-color: var(--white);
+            max-width: 100%;
+        }
+
+        .testimonials-inner {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            min-height: 180px;
+        }
+
+        .testimonial-box {
+            display: none;
+            animation: fadeIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .testimonial-box.active {
+            display: block;
+        }
+
+        .testimonial-box p {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #4A5568;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-box h4 {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #E2E8F0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--secondary);
+            width: 28px;
+            border-radius: 10px;
+        }
+
+        /* --- Rodapé / Contato --- */
+        footer {
+            background-color: #071D33;
+            color: var(--white);
+            padding: 6rem 2rem 2.5rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #CBD5E0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 174, 241, 0.4);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2.5rem;
+            text-align: center;
+            color: #A0AEC0;
+            font-size: 0.95rem;
+        }
+
+        /* --- Animações & Responsividade --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .mvv-container { grid-template-columns: 1fr; gap: 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 1.5rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Superior -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo"><i class="fa-solid fa-snowflake"></i> Berg Lima <span>Soluções</span></a>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="badge-nota">
+                <i class="fa-solid fa-star"></i> <span>4.9/5 estrelas no Achei Perto — 1º lugar em Irecê</span>
+            </div>
+            <h1>Conforto térmico e eficiência para o seu ambiente</h1>
+            <p>Especialistas em instalação, manutenção e higienização de ar-condicionado em Irecê e região. Garantia e precisão técnica que seguem à risca os manuais dos fabricantes.</p>
+            <a href="https://wa.me/5574999069659" target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Gratuito</a>
+        </div>
+    </section>
+
+    <!-- Quem Somos & MVV -->
+    <section id="sobre">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Excelência em Climatização</h2>
+                <h3>Quem Somos</h3>
+                <p>A <strong>Berg Lima Soluções</strong> é referência em refrigeração no mercado local de Irecê - BA. Nosso foco é assegurar que o ar que você respira seja limpo e que seus equipamentos funcionem com a máxima economia energética.</p>
+                <p>Atuamos de forma limpa, organizada e estritamente qualificada, preservando os termos de garantia de fábrica de aparelhos residenciais ou industriais.</p>
+            </div>
+           <div>
+                <img src="https://lh3.googleusercontent.com/d/16y-2e9n66uKm-ONjhttvV1zWTCPM15iy" alt="Técnico trabalhando" style="width:100%; border-radius:12px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
+           </div>
+        </div>
+
+        <div class="mvv-container">
+            <div class="mvv-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Missão</h3>
+                <p style="color: var(--gray); font-size: 0.95rem;">Entregar ambientes saudáveis e confortáveis superando expectativas por meio de transparência e profissionalismo técnico.</p>
+            </div>
+            <div class="mvv-card">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Visão</h3>
+                <p style="color: var(--gray); font-size: 0.95rem;">Ser a mais lembrada e confiável empresa de engenharia térmica e manutenção preventiva de toda a macrorregião de Irecê.</p>
+            </div>
+            <div class="mvv-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Valores</h3>
+                <p style="color: var(--gray); font-size: 0.95rem;">Organização absoluta no pós-serviço, cumprimento severo de prazos, ética operacional e segurança do cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços com Filtros Dinâmicos -->
+    <section id="servicos" style="background-color: #F8FAFC; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Nossas Soluções</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterServices('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterServices('instalacao')">Instalação</button>
+                <button class="filter-btn" onclick="filterServices('manutencao')">Manutenção / Limpeza</button>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-category="instalacao">
+                    <div class="service-icon-box"><i class="fa-solid fa-tools"></i></div>
+                    <div class="service-info">
+                        <h3>Instalação Técnica</h3>
+                        <p style="color: var(--gray);">Adequação de infraestrutura para sistemas Split, Cassete e Hi-Wall seguindo rigorosamente os manuais.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="manutencao">
+                    <div class="service-icon-box"><i class="fa-solid fa-hand-sparkles"></i></div>
+                    <div class="service-info">
+                        <h3>Higienização Profunda</h3>
+                        <p style="color: var(--gray);">Remoção completa de fungos e poeiras invisíveis, devolvendo a pureza e a leveza à qualidade do ar.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="manutencao">
+                    <div class="service-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="service-info">
+                        <h3>Manutenção Corretiva</h3>
+                        <p style="color: var(--gray);">Diagnóstico rápido de falhas mecânicas ou eletrônicas, troca de peças com componentes homologados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="features">
+        <div class="features-inner">
+            <h2 class="section-title">Por que nos Escolher?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.4rem;">Organização Total</h4>
+                        <p style="color: var(--gray); font-size: 0.95rem;">Seu patrimônio protegido. Entregamos o ambiente completamente limpo após qualquer atividade.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.4rem;">Ferramental de Ponta</h4>
+                        <p style="color: var(--gray); font-size: 0.95rem;">Utilização de equipamentos modernos que agilizam processos e evitam desperdício de material.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.4rem;">Foco nas Normas</h4>
+                        <p style="color: var(--gray); font-size: 0.95rem;">Evite a perda da garantia de fábrica contratando profissionais que respeitam o fabricante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="testimonials-inner">
+            <h2 class="section-title">O que Dizem Nossos Clientes</h2>
+            <div class="testimonial-slider">
+                
+                <div class="testimonial-box active">
+                    <p>"A equipe é muito profissional, sabem o que estão fazendo, e possui todas as ferramentas e material para que a instalação seja ágil e segura. Gostei muito, pois instalaram o ar de acordo com o manual..."</p>
+                    <h4>Neil Revin M. F.</h4>
+                </div>
+
+                <div class="testimonial-box">
+                    <p>"Gostei muito do trabalho. Equipe eficiente, bons profissionais, tem todo material necessário, pontual, organizado e deixou tudo limpo. Recomendo o seu trabalho..."</p>
+                    <h4>Lindeilda N.</h4>
+                </div>
+
+            </div>
+            <div class="slider-dots">
+                <div class="dot active" onclick="setSlide(0)"></div>
+                <div class="dot" onclick="setSlide(1)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé & Contatos -->
+    <footer id="contato">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 1.5rem;"><i class="fa-solid fa-snowflake"></i> Berg Lima</a>
+                <p>Soluções inteligentes em refrigeração, ar-condicionado e engenharia de climatização para Irecê e região.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/berrglimasolucoes/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/5574999069659" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Atendimento comercial</h3>
+                <ul>
+                    <li><i class="fa-solid fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> Seg a Sex: 08:30h às 17:30h</li>
+                    <li><i class="fa-solid fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> Sábados: 08:30h às 12:00h</li>
+                    <li><i class="fa-solid fa-location-dot" style="color: var(--secondary); margin-right: 10px;"></i> Av. Tertuliano Cambuí — Centro, Irecê - BA</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contato Imediato</h3>
+                <p style="margin-bottom: 1.5rem;">Precisa de um suporte emergencial ou agendar uma limpeza técnica?</p>
+                <a href="https://wa.me/5574999069659" target="_blank" class="btn btn-footer"><i class="fa-solid fa-phone"></i> (74) 99906-9659</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Berg Lima Soluções. Todos os direitos reservados. Desenvolvido para apresentação comercial.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        // 1. Filtro da Seção de Serviços
+        function filterServices(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                if (category === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // 2. Slider de Depoimentos Interativo
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-box');
+        const dots = document.querySelectorAll('.dot');
+
+        function setSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            setSlide(nextSlide);
+        }, 7000);
+    </script>
+</body>
+</html>
